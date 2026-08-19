@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_maintenance_request_form_solar" model="ir.ui.view">
+
+    <record id="view_maintenance_request_form_solar"
+            model="ir.ui.view">
+
         <field name="name">maintenance.request.form.solar</field>
         <field name="model">maintenance.request</field>
-        <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+
+        <field name="inherit_id"
+               ref="maintenance.hr_equipment_request_view_form"/>
+
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='name']" position="after">
-                <field name="solar_plant"/>
-                <field name="solar_asset"/>
-                <field name="equipment_type"/>
-                <field name="energy_loss_kwh"/>
-                <field name="scada_alarm"/>
+
+            <xpath expr="//div[contains(@class, 'oe_title')]" position="after">
+
+                <group string="Solar Information">
+
+                    <field name="solar_plant"/>
+                    <field name="solar_asset"/>
+                    <field name="equipment_type"/>
+                    <field name="energy_loss_kwh"/>
+                    <field name="scada_alarm"/>
+
+                </group>
+
             </xpath>
+
         </field>
     </record>
+
 </odoo>
